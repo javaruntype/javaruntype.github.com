@@ -12,15 +12,7 @@
     <link rel="stylesheet" href="./css/print.css" type="text/css" media="print" />
     <meta name="Date-Revision-yyyymmdd" content="20161117" />
     <meta http-equiv="Content-Language" content="en" />
-                                                    
-<script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script>
-                                                        
-<script type="text/javascript">try {
-          var pageTracker = _gat._getTracker("UA-1276954-5");
-          pageTracker._trackPageview();
-        } catch(err) {}</script>
-                      
+        
         </head>
   <body class="composite">
     <div id="banner">
@@ -36,7 +28,7 @@
                     
                 <div class="xleft">
         <span id="publishDate">Last Published: 17 Nov 2016</span>
-                  &nbsp;| <span id="projectVersion">Version: 1.3-SNAPSHOT</span>
+                  &nbsp;| <span id="projectVersion">Version: 1.3</span>
                       </div>
             <div class="xright">                    <a href="index.html" title="Main">Main</a>
             |
@@ -103,7 +95,7 @@
     </div>
     <div id="bodyColumn">
       <div id="contentBox">
-        <p><b>JAVARUNTYPE 1.2 RELEASED!</b> (August 5th, 2010). <a href="./download.html">[DOWNLOAD]</a> <a href="./changelog.html">[CHANGELOG]</a></p><div class="section"><h2>The javaRuntype project<a name="The_javaRuntype_project"></a></h2><p>javaRuntype is a compact library aimed at offering a <b>runtime representation of the Java type system</b>.</p><p>This is <b>specially useful in metadata-based systems</b>.</p><p>This becomes useful because, on the one hand, Java's <tt>java.util.Class</tt> objects cannot contain generics information (a &quot;<b>List&lt;String&gt;</b>&quot; object at compile time becomes just &quot;<b>List</b>&quot; at runtime) , and on the other, the <tt>java.lang.reflect.Type</tt> interface and its related hierarchies, which the JVM uses for defining attributes and method signatures, are second-level citizens in the API, and lack an easy-to-use framework to truly enable the use of types as metadata in Java applications.</p><div class="section"><h3>The Type System<a name="The_Type_System"></a></h3><p>javaRuntime's type system representation mainly comprises two kinds of objects: <b>Type</b>s and <b>TypeDef</b>s.</p><div class="section"><h4>Type<a name="Type"></a></h4><p>Class: <tt>org.javaruntype.type.Type</tt></p><p>A Type object represents an instantiation of a Type Definition, for example:</p><ul><li><b>java.util.List&lt;java.lang.String&gt;</b> is an instantiation of the <tt>List</tt> Type Definition, resolving the <tt>E</tt> type parameter as the <tt>java.lang.String</tt> Type.</li><li><b>java.util.List&lt;? extends java.io.Serializable&gt;</b> is another instantiation of the <tt>List</tt> Type Definition, this time resolving the <tt>E</tt> type parameter as an upper bound with type <tt>java.io.Serializable</tt>.</li></ul><p><tt>Type</tt> objects are obtained through the <tt>Types</tt> class (<tt>org.javaruntype.type.Types</tt>), and with the help of the <tt>TypeParameters</tt> (<tt>org.javaruntype.type.TypeParameters</tt>) class:</p><div><pre>
+        <p><b>JAVARUNTYPE 1.3 RELEASED!</b> (November 18th, 2016). <a href="./download.html">[DOWNLOAD]</a> <a href="./changelog.html">[CHANGELOG]</a></p><div class="section"><h2>The javaRuntype project<a name="The_javaRuntype_project"></a></h2><p>javaRuntype is a compact library aimed at offering a <b>runtime representation of the Java type system</b>.</p><p>This is <b>specially useful in metadata-based systems</b>.</p><p>This becomes useful because, on the one hand, Java's <tt>java.util.Class</tt> objects cannot contain generics information (a &quot;<b>List&lt;String&gt;</b>&quot; object at compile time becomes just &quot;<b>List</b>&quot; at runtime) , and on the other, the <tt>java.lang.reflect.Type</tt> interface and its related hierarchies, which the JVM uses for defining attributes and method signatures, are second-level citizens in the API, and lack an easy-to-use framework to truly enable the use of types as metadata in Java applications.</p><div class="section"><h3>The Type System<a name="The_Type_System"></a></h3><p>javaRuntime's type system representation mainly comprises two kinds of objects: <b>Type</b>s and <b>TypeDef</b>s.</p><div class="section"><h4>Type<a name="Type"></a></h4><p>Class: <tt>org.javaruntype.type.Type</tt></p><p>A Type object represents an instantiation of a Type Definition, for example:</p><ul><li><b>java.util.List&lt;java.lang.String&gt;</b> is an instantiation of the <tt>List</tt> Type Definition, resolving the <tt>E</tt> type parameter as the <tt>java.lang.String</tt> Type.</li><li><b>java.util.List&lt;? extends java.io.Serializable&gt;</b> is another instantiation of the <tt>List</tt> Type Definition, this time resolving the <tt>E</tt> type parameter as an upper bound with type <tt>java.io.Serializable</tt>.</li></ul><p><tt>Type</tt> objects are obtained through the <tt>Types</tt> class (<tt>org.javaruntype.type.Types</tt>), and with the help of the <tt>TypeParameters</tt> (<tt>org.javaruntype.type.TypeParameters</tt>) class:</p><div><pre>
     //
     // &quot;Types.listOf(...)&quot; is a static utility method in Types.
     // &quot;Types.STRING&quot; is a static constant for the java.lang.String Type.
